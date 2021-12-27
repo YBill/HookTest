@@ -36,7 +36,6 @@ public class HookStartActivityAct extends AppCompatActivity {
 
     public void handleStartActivityByActivity(View view) {
         Intent intent = new Intent(this, DetailActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("tag", "HookStartActivity By Activity");
         this.startActivity(intent);
     }
