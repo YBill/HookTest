@@ -39,7 +39,7 @@ public class HookNotificationAct extends AppCompatActivity {
             getService.setAccessible(true);
             // 得到 INotificationManager sService
             final Object sService = getService.invoke(notificationManager);
-
+            // 获取 INotificationManager 类（是个aidl文件(接口)）
             Class INotificationManagerClz = Class.forName("android.app.INotificationManager");
             // 动态代理 INotificationManager
             Object proxyNotificationManager = Proxy.newProxyInstance(getClass().getClassLoader(), new Class[]{INotificationManagerClz},
@@ -67,8 +67,10 @@ public class HookNotificationAct extends AppCompatActivity {
 
                             // 可以根据方法名、id、tag 等进行具体拦截
                             if ("enqueueNotificationWithTag".equals(method.getName())) {
+                                // 这里要通过参数来拦截，要注意适配，主要要看各个版本的源码，可能版本不同有改动
                                 if (args != null && args.length == 6) {
-                                    Object parameterId = args[3]; // 第4个参数是id
+                                    // 第4个参数是id（这个需要看源码确定）
+                                    Object parameterId = args[3];
                                     int id = (int) parameterId;
                                     // 将 id 为 1 的通知拦截
                                     if (id == 1) {
