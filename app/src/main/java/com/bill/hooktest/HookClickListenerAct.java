@@ -67,10 +67,11 @@ public class HookClickListenerAct extends AppCompatActivity {
 
     private class HookedOnClickListener implements View.OnClickListener {
 
-        private final View.OnClickListener origin;
+        // 原始的 OnClickListener
+        private final View.OnClickListener mOriginClickListener;
 
-        HookedOnClickListener(View.OnClickListener origin) {
-            this.origin = origin;
+        HookedOnClickListener(View.OnClickListener originClickListener) {
+            this.mOriginClickListener = originClickListener;
         }
 
         @Override
@@ -78,8 +79,8 @@ public class HookClickListenerAct extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Hook Click", Toast.LENGTH_SHORT).show();
             Log.i("Bill", "Before Click");
 
-            if (origin != null) {
-                origin.onClick(v);
+            if (mOriginClickListener != null) {
+                mOriginClickListener.onClick(v);
             }
 
             Log.i("Bill", "After Click");

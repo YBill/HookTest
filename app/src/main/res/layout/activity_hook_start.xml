@@ -6,24 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".HookStartActivityAct">
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="handleClickListener"
-        android:text="Hook Click Listener" />
+        android:onClick="handleStartActivityByActivity"
+        android:text="StartActivity By Activity" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="handleNotification"
-        android:text="Hook Notification" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="handleStartActivity"
-        android:text="Hook StartActivity" />
+        android:onClick="handleStartActivityByContext"
+        android:text="StartActivity By Context" />
 
 </LinearLayout>
