@@ -49,6 +49,7 @@ public class HookClickListenerAct extends AppCompatActivity {
             getListenerInfo.setAccessible(true);
             // 调用 View 的 getListenerInfo() 方法 得到 ListenerInfo 对象
             Object listenerInfo = getListenerInfo.invoke(view);
+
             // 获取 View 的内部类 ListenerInfo 类
             Class<?> listenerInfoClz = Class.forName("android.view.View$ListenerInfo");
             // 获取 ListenerInfo 类的属性 mOnClickListener
@@ -56,6 +57,7 @@ public class HookClickListenerAct extends AppCompatActivity {
             mOnClickListener.setAccessible(true);
             // 获取 mOnClickListener 的值（即原始设置setOnClickListener的OnClickListener）
             View.OnClickListener originOnClickListener = (View.OnClickListener) mOnClickListener.get(listenerInfo);
+
             // 用自定义的 HookedOnClickListener 替换原始的 OnClickListener
             View.OnClickListener proxyOnClickListener = new HookedOnClickListener(originOnClickListener);
             // 重新为 ListenerInfo 的 mOnClickListener 字段赋值为我们的代理 proxyOnClickListener
