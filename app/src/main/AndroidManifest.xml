@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HookTest">
         <activity
+            android:name=".HookNotificationAct"
+            android:exported="true" />
+        <activity
             android:name=".HookClickListenerAct"
             android:exported="true" />
         <activity

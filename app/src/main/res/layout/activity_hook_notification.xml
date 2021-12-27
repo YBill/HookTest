@@ -6,18 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".HookNotificationAct">
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="handleClickListener"
-        android:text="Hook Click Listener" />
+        android:onClick="handleNotIntercept"
+        android:text="不拦截通知" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="handleNotification"
-        android:text="Hook Notification" />
+        android:onClick="handleIntercept"
+        android:text="拦截通知" />
 
 </LinearLayout>
