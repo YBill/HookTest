@@ -11,7 +11,12 @@
         android:id="@+id/btn_click_listener"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Button Click"
+        android:textAllCaps="false"
+        android:textAppearance="@android:style/Widget.TextView"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <FrameLayout
         android:id="@+id/view_click_listener"
@@ -26,7 +31,10 @@
             android:layout_gravity="center"
             android:clickable="false"
             android:focusableInTouchMode="false"
-            android:text="ViewGroup" />
+            android:text="ViewGroup Click"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
