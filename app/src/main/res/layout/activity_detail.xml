@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="Detail Activity"
+        android:text="Detail Activity Failed"
         android:textColor="#000"
         android:textSize="28sp"
         android:textStyle="bold" />
