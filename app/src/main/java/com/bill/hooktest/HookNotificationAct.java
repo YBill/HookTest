@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -71,6 +72,7 @@ public class HookNotificationAct extends AppCompatActivity {
                                     int id = (int) parameterId;
                                     // 将 id 为 1 的通知拦截
                                     if (id == 1) {
+                                        Toast.makeText(getApplicationContext(), "通知被拦截", Toast.LENGTH_SHORT).show();
                                         Log.e("Bill", "[id 为 1，拦截通知]");
                                         return null;
                                     } else {
@@ -119,7 +121,10 @@ public class HookNotificationAct extends AppCompatActivity {
         showNotification(1);
     }
 
+    private int notifyId = 1;
+
     public void handleNotIntercept(View view) {
-        showNotification(2);
+        notifyId++;
+        showNotification(notifyId);
     }
 }
