@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HookTest">
         <activity
+            android:name=".HookHActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailActivity"
             android:exported="true" />
         <activity

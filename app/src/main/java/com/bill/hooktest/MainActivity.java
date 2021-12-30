@@ -29,4 +29,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HookStartActivityAct.class);
         startActivity(intent);
     }
+
+    public void handleH(View view) {
+        Intent intent = new Intent(this, HookHActivity.class);
+        startActivity(intent);
+    }
 }
